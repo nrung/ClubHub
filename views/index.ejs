@@ -7,5 +7,14 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <% if (message.length) { message } %>
+
+    <form action="/" method="post">
+      <span>User: </span><input type="text" name="username"> <br>
+      <span>Pass: </span><input type="text" name="password"> <br>
+      <input type="submit">
+    </form>
+    <a href="/signup">Sign up</a>
   </body>
 </html>
