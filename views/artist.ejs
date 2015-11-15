@@ -24,11 +24,33 @@
 
     </br>
 
-    <p>
-      <%=aboutme%>
-      <!--This is a fake bio of an awesome DJ. He has worked all over
-      and he is very experienced. He loves his job?-->
-    </p>
+    <div class="panel-body">
+        <form role="form" action="/artist" method="post">
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Your Name</span>
+                <input type="text" name="djname" class="form-control" placeholder="DJ Name"
+                       aria-describedby="basic-addon1">
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Brief Bio</span>
+                <!--<input type="text" name="bio" class="form-control" placeholder="This is a fake bio of an \n awesome DJ..."
+                       aria-describedby="basic-addon1"> -->
+            	<textarea name="bio" class="form-control" rows="6" placeholder="This is a fake bio of an awesome DJ..."></textarea>
+            </div>
+            <br>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Image Source</span>
+                <input type="text" name="src" class="form-control" placeholder="~/User/path/to/pic.gif"
+                       aria-describedby="basic-addon1">
+            </div>
+        </form>
+    </div>
 </div>
 
 </body>
