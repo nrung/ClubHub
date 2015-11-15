@@ -13,6 +13,16 @@ var port     = process.env.PORT || 3000;
 var passport = require('passport');
 var flash    = require('connect-flash');
 
+var rdioConfig = {
+  clientId: '6vf5zcbggrgqpclheu7fxx6quy',
+  clientSecret: 'YFzeLCxuvGwOUuXI5NAWqA'
+};
+
+
+var Rdio = require('rdio')({
+  rdio: rdioConfig
+});
+
 // configuration ===============================================================
 // connect to our database
 
