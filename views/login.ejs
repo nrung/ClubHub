@@ -2,36 +2,47 @@
 <!doctype html>
 <html>
 <head>
-  <title>ClubHub - Login</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-  <style>
-    body 		{ padding-top:80px; }
-  </style>
+    <title>ClubHub - Login</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Login</h3>
-    </div>
-    <div class="panel-body">
-        <form role="form" action="/" method="post">
-      <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
-          <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-      </div>
-        <br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"></span></span>
-          <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
         </div>
-        <br>
-        <input class="btn btn-primary" type="submit">
-        </form>
+        <div class="panel-body">
+            <form role="form" action="/" method="post">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><span
+                                class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" name="username" class="form-control" placeholder="Username"
+                           aria-describedby="basic-addon1">
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><span
+                                class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" name="password" class="form-control" placeholder="Password"
+                           aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <input class="btn btn-primary" type="submit">
+            </form>
+            <br>
+            <a href="/signup">Sign Up</a>
+        </div>
     </div>
-  </div>
-  </div>
+</div>
 </div>
 </body>
 </html>
