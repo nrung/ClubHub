@@ -9,7 +9,7 @@ function($scope){
 app.directive("login", function(){
     return {
         restrict: "E",
-        templateUrl: "assets/html/login.html"
+        templateUrl: "/"
     }
 });
 
