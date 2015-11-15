@@ -17,17 +17,16 @@ module.exports = function(app, passport) {
   // =====================================
     app.get('/', function(req, res) {
 
-        res.sendfile('./public/index.html');
+       res.render('login.ejs');
     });
 
   // =====================================
   // LOGIN ===============================
   // =====================================
   // show the login form
-  app.get('/assets/html/login.html', function(req, res) {
+  app.get('/login', function(req, res) {
 
-    // render the page and pass in any flash data if it exists
-    res.sendfile('./public/html/login.html');
+      res.render('login.ejs');
   });
 
   // process the login form
