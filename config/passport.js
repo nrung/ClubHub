@@ -5,7 +5,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 // load up the user model
 var mysql = require('mysql');
-var bcrypt = require('bcrypt-nodejs');
+//var bcrypt = require('bcrypt-nodejs');
 var dbconfig = require('./database');
 var connection = mysql.createConnection(dbconfig.connection);
 
@@ -58,10 +58,10 @@ module.exports = function(passport) {
                         // create the user
                         var newUserMysql = {
                             username: username,
-                            password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
+                            password: password //, null, null)  // use the generateHash function in our user model
                         };
 
-                        var insertQuery = "INSERT INTO users ( username, password) values (?,?)";
+                        var insertQuery = "INSERT INTO users ( username, password ) values (?,?);";
 
                         connection.query(insertQuery,[newUserMysql.username, newUserMysql.password],function(err, rows) {
                             newUserMysql.id = rows.insertId;
@@ -96,7 +96,7 @@ module.exports = function(passport) {
                     }
 
                     // if the user is found but the password is wrong
-                    if (!bcrypt.compareSync(password, rows[0].password))
+                    if (password != rows[0].password)
                         return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
                     // all is well, return successful user

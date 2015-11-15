@@ -53,7 +53,7 @@ module.exports = function(app, passport) {
   // show the signup form
   app.get('/signup', function(req, res) {
     // render the page and pass in any flash data if it exists
-    res.render('signup.ejs', { message: req.flash('signupMessage') });
+    res.render('signup.ejs');
   });
 
   // process the signup form
@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
   }));
 
   // =====================================
-  // PROFILE SECTION =====================
+  // LOCATOR SECTION =====================
   // =====================================
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
@@ -73,6 +73,49 @@ module.exports = function(app, passport) {
       user : req.user // get the user out of session and pass to template
     });
   });
+
+    app.post('/locator', function(req, res) {
+
+        connection.query("UPDATE users SET eventcode=? WHERE username=?", [req.body.eventcode, req.user.username], function(err, rows) {
+
+            if (err) throw err;
+
+        });
+
+        // render the page and pass in any flash data if it exists
+        res.render('locator.ejs');
+    });
+
+    app.get('/nowplaying', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('nowplaying.ejs', { message: req.flash('signupMessage') });
+    });
+
+    app.post('/nowplaying', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('nowplaying.ejs');
+    });
+
+    app.get('/hot', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('hot.ejs');
+    });
+
+    app.post('/hot', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('hot.ejs');
+    });
+
+    app.get('/bio', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('bio.ejs');
+    });
+
+    app.post('/bio', function(req, res) {
+        // render the page and pass in any flash data if it exists
+        res.render('bio.ejs');
+    });
+
 
   // =====================================
   // LOGOUT ==============================
